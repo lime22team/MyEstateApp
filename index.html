@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>MyEstateApp – Legal Pages / Hukuki Belgeler</title>
+  <title>MyEstateApp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="MyEstateApp için yasal belgeler: Hakkında, Gizlilik Politikası, Kullanım Koşulları / Legal pages for MyEstateApp." />
   <style>
@@ -52,6 +52,14 @@
       color: var(--text-muted);
       margin-bottom: 20px;
       text-align: center;
+    }
+    .lang-title,
+    .subtitle-text {
+      display: none;
+    }
+    .lang-title.active,
+    .subtitle-text.active {
+      display: block;
     }
     .lang-switch {
       display: inline-flex;
@@ -127,11 +135,19 @@
       <img src="logo.png" alt="MyEstateApp Logo" class="logo" />
     </div>
 
-    <h1>MyEstateApp – Legal / Hukuki Belgeler</h1>
-    <p class="subtitle">
-      Public legal documents for the MyEstateApp mobile application.<br />
-      MyEstateApp mobil uygulamasına ait herkese açık yasal belgeler.
-    </p>
+    <h1>
+      <span id="title-tr" class="lang-title active">MyEstateApp – Hukuki Belgeler</span>
+      <span id="title-en" class="lang-title">MyEstateApp – Legal Documents</span>
+    </h1>
+
+    <div class="subtitle">
+      <span id="sub-tr" class="subtitle-text active">
+        MyEstateApp mobil uygulamasına ait herkese açık yasal belgeler.
+      </span>
+      <span id="sub-en" class="subtitle-text">
+        Public legal documents for the MyEstateApp mobile application.
+      </span>
+    </div>
 
     <div class="lang-switch-wrapper">
       <div class="lang-switch">
@@ -173,21 +189,37 @@
       tr: document.getElementById("lang-tr"),
       en: document.getElementById("lang-en"),
     };
+    const titleTr = document.getElementById("title-tr");
+    const titleEn = document.getElementById("title-en");
+    const subTr = document.getElementById("sub-tr");
+    const subEn = document.getElementById("sub-en");
+
+    function setLang(lang) {
+      // butonlar
+      buttons.forEach(b => {
+        b.classList.toggle("active", b.getAttribute("data-lang") === lang);
+      });
+
+      // içerik bölümleri
+      sections.tr.classList.toggle("active", lang === "tr");
+      sections.en.classList.toggle("active", lang === "en");
+
+      // başlık + alt metin
+      titleTr.classList.toggle("active", lang === "tr");
+      titleEn.classList.toggle("active", lang === "en");
+      subTr.classList.toggle("active", lang === "tr");
+      subEn.classList.toggle("active", lang === "en");
+    }
 
     buttons.forEach(btn => {
       btn.addEventListener("click", () => {
         const lang = btn.getAttribute("data-lang");
-
-        // butonları güncelle
-        buttons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        // bölümleri göster/gizle
-        Object.keys(sections).forEach(key => {
-          sections[key].classList.toggle("active", key === lang);
-        });
+        setLang(lang);
       });
     });
+
+    // Varsayılan: TR
+    setLang("tr");
   </script>
 </body>
 </html>
