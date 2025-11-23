@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About – MyEstateApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="About the MyEstateApp mobile application." />
+  <style>
+    :root {
+      --bg: #0A1A3C;
+      --card: #FFFFFF;
+      --accent: #FF8A00;
+      --text-main: #111111;
+      --text-muted: #555555;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+    }
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background: var(--card);
+      border-radius: 12px;
+      padding: 24px 20px 32px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+    }
+    h1, h2 { margin-top: 0; }
+    h1 { font-size: 1.8rem; }
+    p, ul {
+      line-height: 1.6;
+      font-size: 0.96rem;
+    }
+    .tagline {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover { text-decoration: underline; }
+    .back {
+      font-size: 0.85rem;
+      margin-bottom: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="back"><a href="index.html">← Back</a></div>
+    <h1>About MyEstateApp</h1>
+    <p class="tagline">
+      A modern, all-in-one mobile management tool built for real estate offices to manage portfolios, locations, clients, and documents.
+    </p>
+
+    <p>
+      <strong>MyEstateApp</strong> is a professional mobile application designed for modern real estate offices that need a single platform to manage property
+      portfolios, field agents, appointments, documents, and client information. It streamlines daily workflows by combining property management, location handling,
+      scheduling, document automation, and smart matching in one app.
+    </p>
+
+    <h2>Main Features</h2>
+    <ul>
+      <li><strong>Location & Maps:</strong> capture and verify listing locations, view on the map, and start navigation with one tap.</li>
+      <li><strong>Portfolio Management:</strong> add up to 20 photos, property size, rooms, floor, age, price, and other details.</li>
+      <li><strong>Smart Photo System:</strong> automatically compresses photos to reduce device storage usage.</li>
+      <li><strong>Calendar & Appointments:</strong> manage viewings, reminders, and client-related events.</li>
+      <li><strong>Client Directory:</strong> store buyer/seller details, optionally sync to phone contacts, and keep communication organized.</li>
+      <li><strong>Document Automation:</strong> generate authorization forms, contracts, and PDF presentations for properties.</li>
+      <li><strong>Smart Matching:</strong> match clients with suitable properties and properties with potential clients using percentage-based matching.</li>
+    </ul>
+
+    <h2>Who Is It For?</h2>
+    <p>
+      MyEstateApp is designed for internal use within real estate offices. It supports owners, managers, agents, and assistants who need fast access to portfolios and
+      client data while maintaining a clean, professional workflow. It is a business tool, not a public listing portal.
+    </p>
+
+    <h2>Location Usage</h2>
+    <p>
+      The app uses location data only while it is actively in use and only with explicit user permission. Location data is used to:
+    </p>
+    <ul>
+      <li>capture and verify property locations during portfolio creation or editing,</li>
+      <li>provide navigation between properties and clients,</li>
+      <li>allow admins to request on-demand location updates from field agents when needed.</li>
+    </ul>
+    <p>
+      The app <strong>does not perform continuous or background location tracking</strong>.
+    </p>
+
+    <h2>Data & Security</h2>
+    <p>
+      All data is stored securely on backend infrastructure and transmitted over encrypted connections. Data is not sold or shared with third parties for marketing.
+      Authorized users may request deletion of their data in accordance with internal office policies.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      For questions about the app, please contact:<br />
+      <strong>Email:</strong> <a href="mailto:contact@company.com">contact@company.com</a>
+    </p>
+  </div>
+</body>
+</html>
