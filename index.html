@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MyEstateApp – Legal / Hukuki Belgeler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MyEstateApp için yasal belgeler: Hakkında, Gizlilik Politikası, Kullanım Koşulları / Legal pages for MyEstateApp: About, Privacy Policy, Terms of Use." />
+  <style>
+    :root {
+      --bg: #0A1A3C;
+      --card: #FFFFFF;
+      --accent: #FF8A00;
+      --text-main: #111111;
+      --text-muted: #555555;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+    }
+    .container {
+      max-width: 780px;
+      width: 100%;
+      background: var(--card);
+      border-radius: 12px;
+      padding: 24px 20px 28px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      letter-spacing: 0.02em;
+    }
+    h2 {
+      margin-top: 24px;
+      font-size: 1.2rem;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    ul.links {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 8px;
+    }
+    ul.links li {
+      margin-bottom: 6px;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover { text-decoration: underline; }
+    .lang-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .footer {
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>MyEstateApp – Legal / Hukuki Belgeler</h1>
+    <p class="subtitle">
+      This repository hosts the public legal documents for the <strong>MyEstateApp</strong> mobile application.<br/>
+      Bu depo, <strong>MyEstateApp</strong> mobil uygulamasına ait herkese açık yasal belgeleri barındırır.
+    </p>
+
+    <h2>Türkçe</h2>
+    <div class="lang-label">TR</div>
+    <ul class="links">
+      <li><a href="about.html#tr">Hakkında – MyEstateApp</a></li>
+      <li><a href="privacy.html#tr">Gizlilik Politikası</a></li>
+      <li><a href="terms.html#tr">Kullanım Koşulları</a></li>
+    </ul>
+
+    <h2>English</h2>
+    <div class="lang-label">EN</div>
+    <ul class="links">
+      <li><a href="about.html#en">About – MyEstateApp</a></li>
+      <li><a href="privacy.html#en">Privacy Policy</a></li>
+      <li><a href="terms.html#en">Terms of Use</a></li>
+    </ul>
+
+    <div class="footer">
+      © <span id="year"></span> MyEstateApp. All rights reserved / Tüm hakları saklıdır.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
