@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>MyEstateApp</title>
+  <title>Timestate – Legal Documents / Hukuki Belgeler</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="MyEstateApp için yasal belgeler: Hakkında, Gizlilik Politikası, Kullanım Koşulları / Legal pages for MyEstateApp." />
+  <meta name="description" content="Timestate için yasal belgeler: Hakkında, Gizlilik Politikası, Kullanım Koşulları / Legal pages for Timestate." />
   <style>
     :root {
       --bg: #0A1A3C;
@@ -132,20 +132,20 @@
   <div class="container">
     <div class="logo-wrapper">
       <!-- logo.png ile aynı klasörde olmalı -->
-      <img src="logo.png" alt="MyEstateApp Logo" class="logo" />
+      <img src="logo.png" alt="Timestate Logo" class="logo" />
     </div>
 
     <h1>
-      <span id="title-tr" class="lang-title active">MyEstateApp – Hukuki Belgeler</span>
-      <span id="title-en" class="lang-title">MyEstateApp – Legal Documents</span>
+      <span id="title-tr" class="lang-title active">Timestate – Hukuki Belgeler</span>
+      <span id="title-en" class="lang-title">Timestate – Legal Documents</span>
     </h1>
 
     <div class="subtitle">
       <span id="sub-tr" class="subtitle-text active">
-        MyEstateApp mobil uygulamasına ait herkese açık yasal belgeler.
+        Timestate mobil uygulamasına ait herkese açık yasal belgeler.
       </span>
       <span id="sub-en" class="subtitle-text">
-        Public legal documents for the MyEstateApp mobile application.
+        Public legal documents for the Timestate mobile application.
       </span>
     </div>
 
@@ -160,7 +160,7 @@
     <div id="lang-tr" class="lang-section active">
       <div class="section-title">Türkçe Belgeler</div>
       <ul class="links">
-        <li><a href="about-tr.html">Hakkında – MyEstateApp</a></li>
+        <li><a href="about-tr.html">Hakkında – Timestate</a></li>
         <li><a href="privacy-tr.html">Gizlilik Politikası</a></li>
         <li><a href="terms-tr.html">Kullanım Koşulları</a></li>
       </ul>
@@ -170,14 +170,14 @@
     <div id="lang-en" class="lang-section">
       <div class="section-title">English Documents</div>
       <ul class="links">
-        <li><a href="about-en.html">About – MyEstateApp</a></li>
+        <li><a href="about-en.html">About – Timestate</a></li>
         <li><a href="privacy-en.html">Privacy Policy</a></li>
         <li><a href="terms-en.html">Terms of Use</a></li>
       </ul>
     </div>
 
     <div class="footer">
-      © <span id="year"></span> MyEstateApp. All rights reserved / Tüm hakları saklıdır.
+      © <span id="year"></span> Timestate. All rights reserved / Tüm hakları saklıdır.
     </div>
   </div>
 
@@ -195,16 +195,13 @@
     const subEn = document.getElementById("sub-en");
 
     function setLang(lang) {
-      // butonlar
       buttons.forEach(b => {
         b.classList.toggle("active", b.getAttribute("data-lang") === lang);
       });
 
-      // içerik bölümleri
       sections.tr.classList.toggle("active", lang === "tr");
       sections.en.classList.toggle("active", lang === "en");
 
-      // başlık + alt metin
       titleTr.classList.toggle("active", lang === "tr");
       titleEn.classList.toggle("active", lang === "en");
       subTr.classList.toggle("active", lang === "tr");
