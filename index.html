@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>MyEstateApp – Legal / Hukuki Belgeler</title>
+  <title>MyEstateApp – Legal Pages / Hukuki Belgeler</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="MyEstateApp için yasal belgeler: Hakkında, Gizlilik Politikası, Kullanım Koşulları / Legal pages for MyEstateApp: About, Privacy Policy, Terms of Use." />
+  <meta name="description" content="MyEstateApp için yasal belgeler: Hakkında, Gizlilik Politikası, Kullanım Koşulları / Legal pages for MyEstateApp." />
   <style>
     :root {
       --bg: #0A1A3C;
       --card: #FFFFFF;
       --accent: #FF8A00;
+      --accent-soft: #FFE1B2;
       --text-main: #111111;
       --text-muted: #555555;
     }
@@ -27,31 +28,79 @@
       max-width: 780px;
       width: 100%;
       background: var(--card);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 24px 20px 28px;
       box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
     }
-    h1 {
-      margin-top: 0;
-      font-size: 1.8rem;
-      letter-spacing: 0.02em;
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
     }
-    h2 {
-      margin-top: 24px;
-      font-size: 1.2rem;
+    .logo {
+      max-width: 120px;
+      height: auto;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 1.7rem;
+      letter-spacing: 0.02em;
+      text-align: center;
     }
     .subtitle {
       font-size: 0.95rem;
       color: var(--text-muted);
       margin-bottom: 20px;
+      text-align: center;
+    }
+    .lang-switch {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid #DDDDDD;
+      padding: 2px;
+      margin: 0 auto 20px;
+      background: #F7F7F7;
+    }
+    .lang-switch-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .lang-btn.active {
+      background: var(--accent-soft);
+      color: var(--text-main);
+      font-weight: 600;
+    }
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-top: 4px;
+      margin-bottom: 10px;
+    }
+    .lang-section {
+      display: none;
+      animation: fadeIn 0.16s ease-out;
+    }
+    .lang-section.active {
+      display: block;
     }
     ul.links {
       list-style: none;
       padding: 0;
-      margin: 8px 0 8px;
+      margin: 0;
     }
     ul.links li {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
     }
     a {
       color: var(--accent);
@@ -59,43 +108,57 @@
       font-weight: 600;
     }
     a:hover { text-decoration: underline; }
-    .lang-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
     .footer {
       margin-top: 24px;
       font-size: 0.8rem;
       color: var(--text-muted);
+      text-align: center;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(2px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="logo-wrapper">
+      <!-- logo.png ile aynı klasörde olmalı -->
+      <img src="logo.png" alt="MyEstateApp Logo" class="logo" />
+    </div>
+
     <h1>MyEstateApp – Legal / Hukuki Belgeler</h1>
     <p class="subtitle">
-      This repository hosts the public legal documents for the <strong>MyEstateApp</strong> mobile application.<br/>
-      Bu depo, <strong>MyEstateApp</strong> mobil uygulamasına ait herkese açık yasal belgeleri barındırır.
+      Public legal documents for the MyEstateApp mobile application.<br />
+      MyEstateApp mobil uygulamasına ait herkese açık yasal belgeler.
     </p>
 
-    <h2>Türkçe</h2>
-    <div class="lang-label">TR</div>
-    <ul class="links">
-      <li><a href="about.html#tr">Hakkında – MyEstateApp</a></li>
-      <li><a href="privacy.html#tr">Gizlilik Politikası</a></li>
-      <li><a href="terms.html#tr">Kullanım Koşulları</a></li>
-    </ul>
+    <div class="lang-switch-wrapper">
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="tr">Türkçe</button>
+        <button class="lang-btn" data-lang="en">English</button>
+      </div>
+    </div>
 
-    <h2>English</h2>
-    <div class="lang-label">EN</div>
-    <ul class="links">
-      <li><a href="about.html#en">About – MyEstateApp</a></li>
-      <li><a href="privacy.html#en">Privacy Policy</a></li>
-      <li><a href="terms.html#en">Terms of Use</a></li>
-    </ul>
+    <!-- Türkçe bölüm -->
+    <div id="lang-tr" class="lang-section active">
+      <div class="section-title">Türkçe Belgeler</div>
+      <ul class="links">
+        <li><a href="about-tr.html">Hakkında – MyEstateApp</a></li>
+        <li><a href="privacy-tr.html">Gizlilik Politikası</a></li>
+        <li><a href="terms-tr.html">Kullanım Koşulları</a></li>
+      </ul>
+    </div>
+
+    <!-- English section -->
+    <div id="lang-en" class="lang-section">
+      <div class="section-title">English Documents</div>
+      <ul class="links">
+        <li><a href="about-en.html">About – MyEstateApp</a></li>
+        <li><a href="privacy-en.html">Privacy Policy</a></li>
+        <li><a href="terms-en.html">Terms of Use</a></li>
+      </ul>
+    </div>
 
     <div class="footer">
       © <span id="year"></span> MyEstateApp. All rights reserved / Tüm hakları saklıdır.
@@ -104,6 +167,27 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const buttons = document.querySelectorAll(".lang-btn");
+    const sections = {
+      tr: document.getElementById("lang-tr"),
+      en: document.getElementById("lang-en"),
+    };
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+
+        // butonları güncelle
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // bölümleri göster/gizle
+        Object.keys(sections).forEach(key => {
+          sections[key].classList.toggle("active", key === lang);
+        });
+      });
+    });
   </script>
 </body>
 </html>
